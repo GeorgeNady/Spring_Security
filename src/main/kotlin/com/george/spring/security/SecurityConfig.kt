@@ -31,7 +31,9 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
 
                 .antMatchers("index", "/css/*", "/js/*").permitAll()
 
-                .antMatchers(POST,"/api/v1/courses").hasRole(ADMIN.name) // ADMIN only can send `POST` request to this pattern
+                // ADMIN only can send `POST` request to this pattern
+                // any users with another role will not be able to access this route
+                .antMatchers(POST,"/api/v1/courses").hasRole(ADMIN.name)
 
                 .anyRequest().authenticated().and().httpBasic()
 
