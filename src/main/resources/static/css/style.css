@@ -1,0 +1,23 @@
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: #222;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .div1 {
+    grid-area: 4 / 2 / 5 / 3;
+    color: #EFEFEF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
